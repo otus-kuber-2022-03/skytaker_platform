@@ -1,13 +1,13 @@
-apiVersion: v1 # Версия API
-kind: Pod # Объект, который создаем
+apiVersion: v1 
+kind: Pod 
 metadata:
- name: app-front # Название Pod
- labels: # Метки в формате key: value
+ name: app-front 
+ labels: 
    key: value
-spec: # Описание Pod
- containers: # Описание контейнеров внутри Pod
- - name: app-front # Название контейнера
-   image: devopscourses/otus:frontend.v1 # Образ из которого создается контейне
+spec: 
+ containers:
+ - name: app-front 
+   image: devopscourses/otus:frontend.v1
    volumeMounts:
    - name: app
      mountPath: /app
