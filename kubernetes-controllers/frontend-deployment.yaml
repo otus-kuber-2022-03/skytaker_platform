@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: frontend
@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: server
-        image: devopscourses/hipster-frontend:v0.0.1
+        image: devopscourses/hipster-frontend:v0.0.2
         imagePullPolicy: IfNotPresent
         readinessProbe:
           initialDelaySeconds: 10
           httpGet:
-            path: "/_healthz"
+            path: "/_health"
             port: 8080
             httpHeaders:
             - name: "Cookie"

@@ -6,6 +6,15 @@ metadata:
     app: paymentservice
 spec:
   replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      # Количество реплик, которое можно создать с превышением значения replicas
+      # Можно задавать как абсолютное число, так и процент. Default: 25%
+      maxSurge: 3
+      # Количество реплик от общего числа, которое можно "уронить"
+      # Аналогично, задается в процентах или числом. Default: 25%
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: paymentservice
