@@ -17,7 +17,7 @@ spec:
       containers:
       - name: minio
         envFrom:
-	- secretRef:
+        - secretRef:
             name: minio-secret
         image: minio/minio:RELEASE.2019-07-10T00-34-56Z
         args:
